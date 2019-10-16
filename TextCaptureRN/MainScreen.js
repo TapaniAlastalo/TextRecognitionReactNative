@@ -26,7 +26,7 @@ export default class MainScreen extends React.Component {
         <Text>Synopsis: </Text>
         <Button
             onPress = {_ => this.itemPressed()}
-            title = "Näytä traileri"
+            title = "Open TextCapturer"
             color = "black"
         />
       </View>

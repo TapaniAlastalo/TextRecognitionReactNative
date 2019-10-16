@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "71017650830",
+    "firebase_url": "https://textrecognitionrn.firebaseio.com",
+    "project_id": "textrecognitionrn",
+    "storage_bucket": "textrecognitionrn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71017650830:android:f730d303cc2fffa3c087df",
+        "android_client_info": {
+          "package_name": "com.capturetext"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71017650830-9m2i7bi6tmq36a0efqtsj1ndfhrtuqop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrPGKHgyOAIKood-XXXzCIR8h05Hw4v2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71017650830-9m2i7bi6tmq36a0efqtsj1ndfhrtuqop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71017650830:android:a974429b4118b988c087df",
+        "android_client_info": {
+          "package_name": "com.textcapturern"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71017650830-9m2i7bi6tmq36a0efqtsj1ndfhrtuqop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrPGKHgyOAIKood-XXXzCIR8h05Hw4v2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71017650830-9m2i7bi6tmq36a0efqtsj1ndfhrtuqop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
