@@ -9,9 +9,27 @@ Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä ol
 [TextRecognition Video](videos/....mp4)
 #### Conclusions / Issues
 
-#### Jotain..
-* Android SDK määrittely
-* add google-services.json to the appropriate folder (/android/app/) (Android only)
+## Työvaiheet
+#### Git alustus
+* git init jne...
+#### Sovelluksen alustus
+* react-native init TextRecognitionRN
+#### Android SDK määrittely
+* local.properties tiedosto Android kansioon.
+* including path to SDK
+#### Perus pakettien asennus
+* npm install --save react-navigation
+* npm install --save react-navigation-stack
+* npm install --save react-native-gesture-handler
+##### Testaus - Lopulta usean uudelleen käynnistyksen jälkeen - OK
+* react-native run-android
+
+
+
+## NOT REALLY
+
+Firebase yhteys
+* google-services.json to the appropriate folder (/android/app/) (Android only)
 * add GoogleService-Info.plist to the appropriate folder (/ios/) (iOS only)
 * install CocoaPods in your react-native project and add the following line to your Podfile then run pod install (iOS only)
 * pod 'Firebase/Core'
@@ -19,10 +37,6 @@ Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä ol
 * pod 'Firebase/MLVisionTextModel'
 
 #### Käytetyt komennot
-* react-native init TextRecognition
-* npm install --save react-navigation
-* npm install --save react-navigation-stack
-* npm install --save react-native-gesture-handler
 * npm install react-native-firebase-mlkit --save
 * react-native link react-native-firebase-mlkit
 * react-native run-android / react-native run-ios
