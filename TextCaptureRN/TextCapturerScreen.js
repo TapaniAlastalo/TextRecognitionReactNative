@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button,
   Dimensions,
+  StyleSheet,
   Text,
   TouchableHighlight,
   View
@@ -89,7 +90,7 @@ clickedMe() {
   }
 }
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",

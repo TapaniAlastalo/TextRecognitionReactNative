@@ -27,10 +27,10 @@ Video
 * npm install --save react-navigation
 * npm install --save react-navigation-stack
 * npm install --save react-native-gesture-handler
-##### Testaus - Lopulta usean uudelleen käynnistyksen jälkeen - OK
+##### Testaus - Lopulta 3-4 uudelleen käynnistyksen jälkeen - OK
 * react-native run-android
 
-## Firebase ML Kit asennus
+## Firebase ML Kit käyttöönotto
 * npm install react-native-firebase-mlkit --save
 
 #### Firebase yhteys
@@ -59,7 +59,7 @@ android/app/build.gradle tiedostoon seuraavat riippuvuudet (depedencies)
 android/app/build.gradle tiedostoon loppuun (toiseksi viimeiseksi)
 * apply plugin: 'com.google.gms.google-services'
 
-#### Testaus - Lopulta erittäin usean uudelleen käynnistyksen jälkeen - OK
+#### Testaus - Lopulta 3-4 uudelleen käynnistyksen jälkeen - Build Success - OK
 #### Firebase sync - OK
 
 ## Kameran käyttöönotto
@@ -85,7 +85,7 @@ android/app/src/main/AndroidManifest.xml tiedostoon seuraavat oikeudet (permissi
 * uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
 * uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
 
-#### Testaus - Lopulta erittäin usean uudelleen käynnistyksen jälkeen - NJET
+#### Testaus - Lopulta 3-4 uudelleen käynnistyksen jälkeen - Build Success - OK
 
 ## NOT REALLY
 
