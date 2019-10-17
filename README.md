@@ -87,9 +87,33 @@ android/app/src/main/AndroidManifest.xml tiedostoon seuraavat oikeudet (permissi
 
 #### Testaus - Lopulta 3-4 uudelleen käynnistyksen jälkeen - Build Success - OK
 
-## NOT REALLY
 
-### Firebase koodin lisäys
+## Firebase koodin lisäys
+* import RNMlKit from 'react-native-firebase-mlkit';
+* import { RNCamera } from 'react-native-camera';
+
+```Javascript
+takePicture = async () => {
+    try {
+      const options = { quality: 0.5, base64: true, skipProcessing: true, forceUpOrientation: true };
+      this.camera.takePictureAsync(options).then(data => {
+        // for on-device (Supports Android and iOS)
+        RNMlKit.deviceTextRecognition(data.uri).then(deviceTextRecognition => {
+          this.handleRecognizedText(deviceTextRecognition);          
+        });
+        // for cloud (At the moment supports only Android)
+        /*RNMlKit.cloudTextRecognition(data.uri).then(cloudTextRecognition => {
+          this.handleRecognizedText(deviceTextRecognition);
+        });*/
+      });
+    } catch (err) {
+      alert("Error:" + err);
+    }
+  };
+```
+
+
+## NOT REALLY
 
 Firebase yhteys
 * google-services.json to the appropriate folder (/android/app/) (Android only)
