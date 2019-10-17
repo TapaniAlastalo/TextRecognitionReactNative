@@ -38,7 +38,7 @@ Video
 * Nimeäminen oikein. Tässä tapauksessa com.textcapturern.
 * google-services.json tiedosto /android/app/ -kansioon (Android only)
 
-#### Firebase valmistelut - TARKKANA
+#### Firebase valmistelut
 android/app/src/main/java/com/textcapturern/MainApplication.java tiedostoon seuraava import
 * import com.mlkit.RNMlKitPackage;
 * !! Ei Lisätä komentoa android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
@@ -88,7 +88,7 @@ android/app/src/main/AndroidManifest.xml tiedostoon seuraavat oikeudet (permissi
 #### Testaus - Lopulta 3-4 uudelleen käynnistyksen jälkeen - Build Success - OK
 
 
-## Firebase koodin lisäys
+## MLKIT / RNCCamera koodin lisäys
 * import RNMlKit from 'react-native-firebase-mlkit';
 * import { RNCamera } from 'react-native-camera';
 
