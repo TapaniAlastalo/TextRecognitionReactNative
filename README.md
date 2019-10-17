@@ -12,7 +12,7 @@ Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä ol
 
 ## Links
 Video
-* [TextRecognition Video](videos/....mp4)
+* [TextRecognition Example Video](Videos/Screencast-TextRecognition.mp4)
 
 
 
