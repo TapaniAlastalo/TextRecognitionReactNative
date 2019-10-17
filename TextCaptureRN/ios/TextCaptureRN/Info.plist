@@ -53,5 +53,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Application requests permission for use of Camera. Camera is used for text recognition.</string>
+	<!-- Include this only if you are planning to use the camera roll -->
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Application requests permission to access to photo library.</string>
 </dict>
 </plist>
