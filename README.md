@@ -112,6 +112,19 @@ takePicture = async () => {
   };
 ```
 
+```Javascript
+handleRecognizedText = (resultMap) => {
+    // MAPPED IN NATIVE MODULE / PACKAGE .\node_modules\react-native-firebase-mlkit\android\src\main\java\com\mlkit
+    // info.putMap("blockCoordinates", coordinates);
+    // info.putString("blockText", blocks.get(i).getText());
+    // info.putString("resultText", firebaseVisionText.getText());
+    var resultTexts = resultMap.map(function(object) {
+      return object['resultText'];
+    });
+    this.props.navigation.state.params.returnData(resultTexts);
+    this.props.navigation.goBack();
+  }
+```
 
 ## NOT REALLY
 
