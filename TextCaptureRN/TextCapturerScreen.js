@@ -20,85 +20,55 @@ export default class TextCapturerScreen extends React.Component {
   };
 
   constructor(props) {
-    super(props);
-    this.state = { testText: 'Zero' };    
+    super(props); 
   }
 
   takePicture = async () => {
-    if (this.camera) {
-      this.setState({
-        testText: 'If'
-      });
-      const options = { quality: 0.5, base64: true, skipProcessing: true, forceUpOrientation: true };
-      const data = await this.camera.takePictureAsync(options);
-      // for on-device (Supports Android and iOS)
-      const deviceTextRecognition = await RNMlKit.deviceTextRecognition(data.uri); 
-      console.log('Text Recognition On-Device', deviceTextRecognition);
-      this.setState({
-        testText: deviceTextRecognition
-      });
-      // for cloud (At the moment supports only Android)
-      //const cloudTextRecognition = await RNMlKit.cloudTextRecognition(data.uri);
-      //console.log('Text Recognition Cloud', cloudTextRecognition);
-    } else{
-      this.setState({
-        testText: 'Else'
-      });
-    }
-  };
-
-  takePhoto = async () => {
     try {
-      const data = await this.camera.capture();
-      console.log('Path to image: ' + data.path);
-      this.setState({
-        testText: 'Path' + data.path
+      const options = { quality: 0.5, base64: true, skipProcessing: true, forceUpOrientation: true };
+      this.camera.takePictureAsync(options).then(data => {
+        // for on-device (Supports Android and iOS)
+        RNMlKit.deviceTextRecognition(data.uri).then(deviceTextRecognition => {
+          this.handleRecognizedText(deviceTextRecognition);          
+        });
+        // for cloud (At the moment supports only Android)
+        /*RNMlKit.cloudTextRecognition(data.uri).then(cloudTextRecognition => {
+          this.handleRecognizedText(deviceTextRecognition);
+        });*/
       });
     } catch (err) {
-      // console.log('err: ', err);
-      this.setState({
-        testText: 'Err' + err
-      });
+      alert("Error:" + err);
     }
   };
 
-  takeCamPicture() {
-    const options = {};
-    //options.location = ...
-    this.camera.capture({metadata: options})
-      .then((data) => {
-        console.log(data)
-        this.setState({
-          testText: 'Path' + data.path
-        });
-      })
-      .catch(err => {
-        console.error(err)
-        this.setState({
-          testText: 'Err' + err
-        });
-      });
+  handleRecognizedText = (resultMap) => {
+    //info.putMap("blockCoordinates", coordinates);
+    //info.putString("blockText", blocks.get(i).getText());
+    //info.putString("resultText", firebaseVisionText.getText());
+    var resultTexts = resultMap.map(function(object) {
+      return object['resultText'];
+    });
+    var blockTexts = resultMap.map(function(object) {
+      return object['blockText'];
+    });
+    var blockCoordinaates = resultMap.map(function(object) {
+      return object['blockCoordinates'];
+    });
+    this.props.navigation.state.params.returnData(resultTexts);
+    this.props.navigation.goBack();
   }
-  
 
- itemPressed = () => {
-   //this.takePicture();
-   //this.takeCamPicture();
-   this.takePhoto();
-   
-}
-
-clickedMe() {
-  alert("Capture!");
-}
+  itemPressed = () => {
+    this.takePicture();
+    //this.takePhoto();   
+  }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.testText}</Text>
         <RNCamera
-          ref={cam => {
-            this.camera = cam;
+          ref={ref => {
+            this.camera = ref;
           }}
           style={styles.preview}
         >
