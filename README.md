@@ -3,7 +3,7 @@
 Tapani Alastalo / M1475
 
 
-# TextRecognition on React Native with Firebase MLKIT - ready 50%
+# TextRecognition on React Native with Firebase MLKIT - ready 90%
 Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä oleva teksti ja poimia se käyttäjän käytettäväksi ja muokattavaksi. 
 
 * Työvaiheet mukailevat seuraavia käyttöönotto-ohjeistuksia: https://react-native-community.github.io/react-native-camera/docs/installation#android & https://www.npmjs.com/package/react-native-firebase-mlkit
