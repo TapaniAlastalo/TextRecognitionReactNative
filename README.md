@@ -41,7 +41,7 @@ Video
 #### Firebase valmistelut - TARKKANA
 android/app/src/main/java/com/textcapturern/MainApplication.java tiedostoon seuraava import
 * import com.mlkit.RNMlKitPackage;
-!! Ei Lisätä komentoa android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
+* !! Ei Lisätä komentoa android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
 * !! EI TARVITA ENÄÄN * packages.add(new RNMlKitPackage());
 
 android/settings.gradle tiedostoon seuraavat rivit
@@ -67,8 +67,8 @@ android/app/build.gradle tiedostoon loppuun (toiseksi viimeiseksi)
 
 android/app/src/main/java/com/textcapturern/MainApplication.java tiedostoon seuraava import
 * import org.reactnative.camera.RNCameraPackage;
-!! Ei Lisätä komentoa android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
-!! EI TARVITA ENÄÄN * packages.add(new RNCameraPackage());
+* !! Ei Lisätä komentoa android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
+* !! EI TARVITA ENÄÄN * packages.add(new RNCameraPackage());
 
 android/settings.gradle tiedostoon seuraavat rivit
 * include ':react-native-camera'

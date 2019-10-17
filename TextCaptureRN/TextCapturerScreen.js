@@ -83,8 +83,8 @@ export default class TextCapturerScreen extends React.Component {
 
  itemPressed = () => {
    //this.takePicture();
-   this.takeCamPicture();
-   //this.takePhoto();
+   //this.takeCamPicture();
+   this.takePhoto();
    
 }
 
