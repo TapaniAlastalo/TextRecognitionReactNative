@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import RNMlKit from 'react-native-firebase-mlkit';
-import Camera from 'react-native-camera';
+import { RNCamera } from 'react-native-camera';
 
 export default class TextCapturerScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -47,44 +47,71 @@ export default class TextCapturerScreen extends React.Component {
     }
   };
 
+  takePhoto = async () => {
+    try {
+      const data = await this.camera.capture();
+      console.log('Path to image: ' + data.path);
+      this.setState({
+        testText: 'Path' + data.path
+      });
+    } catch (err) {
+      // console.log('err: ', err);
+      this.setState({
+        testText: 'Err' + err
+      });
+    }
+  };
+
   takeCamPicture() {
     const options = {};
     //options.location = ...
     this.camera.capture({metadata: options})
-      .then((data) => console.log(data))
-      .catch(err => console.error(err));
+      .then((data) => {
+        console.log(data)
+        this.setState({
+          testText: 'Path' + data.path
+        });
+      })
+      .catch(err => {
+        console.error(err)
+        this.setState({
+          testText: 'Err' + err
+        });
+      });
   }
   
 
  itemPressed = () => {
    //this.takePicture();
    this.takeCamPicture();
+   //this.takePhoto();
    
 }
 
 clickedMe() {
-  alert("Touched me");
+  alert("Capture!");
 }
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Button
-            onPress = {_ => this.itemPressed()}
-            title = "Capture"
-            color = "black"
-        />
+      <View style={styles.container}>
         <Text>{this.state.testText}</Text>
-        <Camera
-          ref={(cam) => {
-            this.camera.cam;
+        <RNCamera
+          ref={cam => {
+            this.camera = cam;
           }}
           style={styles.preview}
-          aspect={Camera.constants.Aspect.fill}>
-            <TouchableHighlight onPress={this.clickedMe.bind(this)}>
-              <View style={{height:50,width:50,backgroundColor:"pink"}}></View>
-            </TouchableHighlight>
-        </Camera>
+        >
+          <TouchableHighlight>
+            <View style={{height:50,width:50}}>
+            <Button
+                onPress = {this.itemPressed.bind(this)}
+                title = "Capture"
+                color = "black"
+            />
+            </View>
+          </TouchableHighlight>
+        </RNCamera>
       </View>
     )
   }
