@@ -133,6 +133,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        missingDimensionStrategy 'react-native-camera', 'mlkit' // for camera and ml kit
     }
     splits {
         abi {
@@ -181,10 +182,11 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    // CAMERA
+    implementation project(':react-native-camera')
+    // FIREBASE
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-ml-vision:17.0.0'
-
     implementation (project(':react-native-firebase-mlkit')) {
         exclude group: 'com.google.firebase'
     }

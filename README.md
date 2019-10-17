@@ -1,32 +1,36 @@
-# Harjoitustyö
-## Mobile Application Development (TTOW0615), Autumn 2019
+#### Harjoitustyö
+### Mobile Application Development (TTOW0615), Autumn 2019
 Tapani Alastalo / M1475
 
 
-## TextRecognition - ready 50%
-Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä oleva teksti ja poimia se käyttäjän käytettäväksi ja muokattavaksi.
+# TextRecognition on React Native with Firebase MLKIT - ready 50%
+Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä oleva teksti ja poimia se käyttäjän käytettäväksi ja muokattavaksi. 
+
+* Työvaiheet mukailevat seuraavia käyttöönotto-ohjeistuksia: https://react-native-community.github.io/react-native-camera/docs/installation#android & https://www.npmjs.com/package/react-native-firebase-mlkit
+* Huom! Ei kannata käyttää automaagisia asennuksia, koska ne on todennäköisesti vanhentuneita eikä tunnu toimivan.
+* Ei siis react-native link react-native-camera -komentoja yms
 #### Links
-* Ohjeet mukailevat seuraavan ohjeistuksen vaiheita: https://www.npmjs.com/package/react-native-firebase-mlkit
-* Vältä kuitenkin kaikkea automaagista toimintaa. Mikään ei ikinä toimi, jos ei käy vaihe-vaiheelta läpi.
-[TextRecognition Video](videos/....mp4)
+Video
+* [TextRecognition Video](videos/....mp4)
 #### Conclusions / Issues
 
-## Työvaiheet
-#### Git alustus
+# Työvaiheet
+## Alustus
+### Git alustus
 * git init jne...
-#### Sovelluksen alustus
+### Sovelluksen alustus
 * react-native init TextRecognitionRN
-#### Android SDK määrittely
+### Android SDK määrittely
 * local.properties tiedosto Android kansioon.
 * including path to SDK
-#### Perus pakettien asennus
+### Perus pakettien asennus
 * npm install --save react-navigation
 * npm install --save react-navigation-stack
 * npm install --save react-native-gesture-handler
 ##### Testaus - Lopulta usean uudelleen käynnistyksen jälkeen - OK
 * react-native run-android
 
-### Firebase ML Kit asennus
+## Firebase ML Kit asennus
 * npm install react-native-firebase-mlkit --save
 
 #### Firebase yhteys
@@ -37,8 +41,8 @@ Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä ol
 #### Firebase valmistelut - TARKKANA
 android/app/src/main/java/com/textcapturern/MainApplication.java tiedostoon seuraava import
 * import com.mlkit.RNMlKitPackage;
-Lisätty komento android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
-* packages.add(new RNMlKitPackage());
+!! Ei Lisätä komentoa android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
+* !! EI TARVITA ENÄÄN * packages.add(new RNMlKitPackage());
 
 android/settings.gradle tiedostoon seuraavat rivit
 * include ':react-native-firebase-mlkit'
@@ -55,12 +59,37 @@ android/app/build.gradle tiedostoon seuraavat riippuvuudet (depedencies)
 android/app/build.gradle tiedostoon loppuun (toiseksi viimeiseksi)
 * apply plugin: 'com.google.gms.google-services'
 
-##### Testaus - Lopulta erittäin usean uudelleen käynnistyksen jälkeen - OK
-##### Firebase sync - OK
+#### Testaus - Lopulta erittäin usean uudelleen käynnistyksen jälkeen - OK
+#### Firebase sync - OK
 
-### Firebase koodin lisäys
+## Kameran käyttöönotto
+* npm install react-native-camera --save
+
+android/app/src/main/java/com/textcapturern/MainApplication.java tiedostoon seuraava import
+* import org.reactnative.camera.RNCameraPackage;
+!! Ei Lisätä komentoa android/app/src/main/java/com/textcapturern/MainApplication.java tiedoston getPackages metodin loppuun ennen palautusta.
+!! EI TARVITA ENÄÄN * packages.add(new RNCameraPackage());
+
+android/settings.gradle tiedostoon seuraavat rivit
+* include ':react-native-camera'
+* project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
+
+android/app/build.gradle tiedostoon seuraavat riippuvuudet (depedencies)
+* implementation project(':react-native-camera')
+Lisäksi samaan tiedostoon android:defaultConfig sisälle
+* missingDimensionStrategy 'react-native-camera', 'mlkit'
+
+android/app/src/main/AndroidManifest.xml tiedostoon seuraavat oikeudet (permissions)
+* uses-permission android:name="android.permission.RECORD_AUDIO"
+* uses-permission android:name="android.permission.CAMERA"
+* uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+* uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+
+#### Testaus - Lopulta erittäin usean uudelleen käynnistyksen jälkeen - NJET
 
 ## NOT REALLY
+
+### Firebase koodin lisäys
 
 Firebase yhteys
 * google-services.json to the appropriate folder (/android/app/) (Android only)
@@ -75,4 +104,5 @@ Firebase yhteys
 * react-navigation
 * react-navigation-stack
 * react-native-gesture-handler
+* react-native-camera
 * react-native-firebase-mlkit

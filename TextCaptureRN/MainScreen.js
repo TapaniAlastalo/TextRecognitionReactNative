@@ -23,7 +23,6 @@ export default class MainScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Main Screen</Text>
-        <Text>Synopsis: </Text>
         <Button
             onPress = {_ => this.itemPressed()}
             title = "Open TextCapturer"
