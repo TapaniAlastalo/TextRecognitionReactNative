@@ -9,10 +9,19 @@ Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä ol
 * Työvaiheet mukailevat seuraavia käyttöönotto-ohjeistuksia: https://react-native-community.github.io/react-native-camera/docs/installation#android & https://www.npmjs.com/package/react-native-firebase-mlkit
 * Huom! Ei kannata käyttää automaagisia asennuksia, koska ne on todennäköisesti vanhentuneita eikä tunnu toimivan.
 * Ei siis react-native link react-native-camera -komentoja yms
-#### Links
+
+## Links
 Video
 * [TextRecognition Video](videos/....mp4)
-#### Conclusions / Issues
+
+
+
+## Asennetut paketit
+* react-navigation
+* react-navigation-stack
+* react-native-gesture-handler
+* react-native-camera
+* react-native-firebase-mlkit
 
 # Työvaiheet
 ## Alustus
@@ -136,10 +145,7 @@ Firebase yhteys
 * pod 'Firebase/MLVision'
 * pod 'Firebase/MLVisionTextModel'
 
-
-## Asennetut paketit
-* react-navigation
-* react-navigation-stack
-* react-native-gesture-handler
-* react-native-camera
-* react-native-firebase-mlkit
+## Conclusions / Issues
+Äärettömän tuskallista päästä alkuun. Melkein tuntuisi helpommalta tehdä natiivi moduuli itse, kuin käyttää "valmiita".
+* Androidilla sai perustoiminnallisuuden toteutettua.
+* IOS toteuttamatta ja testaamatta - vielä.
