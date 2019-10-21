@@ -3,7 +3,7 @@
 Tapani Alastalo / M1475
 
 
-# TextRecognition on React Native with Firebase MLKIT - ready 90%
+# TextRecognition on React Native with Firebase MLKIT - ready 100%
 Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä oleva teksti ja poimia se käyttäjän käytettäväksi ja muokattavaksi. 
 
 * Työvaiheet mukailevat seuraavia käyttöönotto-ohjeistuksia: https://react-native-community.github.io/react-native-camera/docs/installation#android & https://www.npmjs.com/package/react-native-firebase-mlkit
@@ -13,6 +13,8 @@ Tekstin tunnistussovellus, jonka tehtävänä on tunnistaa kameranäkymässä ol
 ## Links
 Video
 * [TextRecognition Example Video](Videos/Screencast-TextRecognition.mp4)
+Presentation
+* [Powerpoint](show/presentation.pptx)
 
 
 
@@ -135,10 +137,9 @@ handleRecognizedText = (resultMap) => {
   }
 ```
 
-## NOT REALLY
+## NOT DONE
 
 Firebase yhteys
-* google-services.json to the appropriate folder (/android/app/) (Android only)
 * add GoogleService-Info.plist to the appropriate folder (/ios/) (iOS only)
 * install CocoaPods in your react-native project and add the following line to your Podfile then run pod install (iOS only)
 * pod 'Firebase/Core'
@@ -148,4 +149,5 @@ Firebase yhteys
 ## Conclusions / Issues
 Äärettömän tuskallista päästä alkuun. Melkein tuntuisi helpommalta tehdä natiivi moduuli itse, kuin käyttää "valmiita".
 * Androidilla sai perustoiminnallisuuden toteutettua.
-* IOS toteuttamatta ja testaamatta - vielä.
+* IOS yritetty yhdistää, mutta ei toiminut hyvin.
+* Best practices Android->iOS siirtymään?
